@@ -21,14 +21,22 @@
             width: 100%;
             overflow: hidden;
         }
-        .background {
+        .background video {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://i.postimg.cc/ncY8DWGZ/0-2-3.jpg') no-repeat center center/cover;
-            z-index: -1;
+            object-fit: cover;
+            filter: brightness(40%) blur(3px); /* Scuro e leggermente sfuocato */
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
         }
         .content {
             position: relative;
@@ -38,7 +46,7 @@
             align-items: center;
             height: 100%;
             text-align: center;
-            background: rgba(0, 0, 0, 0.4);
+            color: white;
         }
         .content h1 {
             font-size: 3rem;
@@ -64,22 +72,17 @@
             background: white;
             color: black;
         }
-        .languages {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-        .languages a {
-            color: white;
-            text-decoration: none;
-            margin-left: 10px;
-            font-size: 1rem;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="background"></div>
+        <div class="background">
+            <video autoplay muted loop playsinline>
+                <source src="https://www.dropbox.com/scl/fi/zn7wfs951fq9jp5lwjgqb/showreel_loop.mp4?rlkey=d3jxe12yir2dbsf5op4cdpp4w&st=22314pqu&raw=1" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="overlay"></div>
         <div class="content">
             <h1>Alchemist Film</h1>
             <p>
@@ -87,13 +90,10 @@
                 Benvenuto in Alchemist Film, dove la creatività incontra la narrazione.
             </p>
             <div>
-                <a href="https://www.youtube.com" target="_blank">YouTube</a>
-                <a href="https://www.vimeo.com" target="_blank">Vimeo</a>
-                <a href="https://www.instagram.com" target="_blank">Instagram</a>
+                <a href="https://www.youtube.com/channel/UCPUh5o9YJ732EAR8z82ljvg" target="_blank">YouTube</a>
+                <a href="https://vimeo.com/alexdallolio" target="_blank">Vimeo</a>
+                <a href="https://www.instagram.com/alex_dallolio/" target="_blank">Instagram</a>
             </div>
-        </div>
-        <div class="languages">
-            <a href="#">EN</a> | <a href="#">IT</a>
         </div>
     </div>
 </body>
